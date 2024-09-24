@@ -5,8 +5,12 @@
 
 
 <section>
-  <details>
+  <details open>
     <summary>Week 1</summary>
+
+  ![Git](https://skillicons.dev/icons?i=git)
+  ![IntelliJ](https://skillicons.dev/icons?i=idea)
+
   </details>
   
   <details>

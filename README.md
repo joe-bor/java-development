@@ -1,8 +1,8 @@
-# java-development
+#  ![qwe](https://skillicons.dev/icons?i=java) Java Development 
 
-- This repository contains my work in Pluralsight's Learn to Code Academy through [Year Up United](https://www.yearup.org/).
+### This repository contains my work in Pluralsight's Learn to Code Academy through [Year Up United](https://www.yearup.org/). ![qwe](https://www.yearup.org/sites/default/files/YUU_Fav_Icon_32x32_0.ico)
+![pluralsight-banner](https://logowik.com/content/uploads/images/pluralsight7708.jpg)
 
----
 
 <section>
   <details>

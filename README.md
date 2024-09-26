@@ -1,16 +1,22 @@
 #  ![qwe](https://skillicons.dev/icons?i=java) Java Development 
 
-### This repository contains my work in Pluralsight's Learn to Code Academy through [Year Up United](https://www.yearup.org/). ![qwe](https://www.yearup.org/sites/default/files/YUU_Fav_Icon_32x32_0.ico)
+This repository contains my work in Pluralsight's Learn to Code Academy through [Year Up United](https://www.yearup.org/). ![qwe](https://www.yearup.org/sites/default/files/YUU_Fav_Icon_32x32_0.ico)
 ![pluralsight-banner](https://logowik.com/content/uploads/images/pluralsight7708.jpg)
+
+---
 
 
 <section>
   <details open>
-    <summary>Week 1</summary>
-
-  ![Git](https://skillicons.dev/icons?i=git)
-  ![IntelliJ](https://skillicons.dev/icons?i=idea)
-
+    <summary>
+      Week 1
+    </summary>
+      <ul>
+        <li>High-level overview of computers and its components.</li>
+        <li>What is Git and how to use it.</li>
+        <li>IntelliJ IDEA</li>
+        <li>Java</li>
+      </ul>
   </details>
   
   <details>

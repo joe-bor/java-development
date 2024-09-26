@@ -5,6 +5,18 @@ This repository contains my work in Pluralsight's Learn to Code Academy through 
 
 ---
 
+## Requirements
+
+- [Git](https://git-scm.com/downloads)
+- [Java](https://www.oracle.com/th/java/technologies/downloads/)
+- [MySQL](https://dev.mysql.com/downloads/workbench/)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
+- [Postman](https://www.postman.com/downloads/)
+
+---
+
+## Lessons
+#### Pluralsight Instructor: [Maaike Van Putten](https://nl.linkedin.com/in/maaikevanputten)
 
 <section>
   <details open>

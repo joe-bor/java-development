@@ -8,10 +8,12 @@ public class SandwichShop {
 
     public static void main(String[] args) {
         float sandwichPrice = getSandwichSize() == 1 ? 5.45f : 8.95f;
+        boolean isSandwichLoaded = wantSandwichLoaded();
         int customerAge = getCustomerAge();
         float discount = determineDiscount(customerAge);
+        float extraCharge = isSandwichLoaded ? getSandwichSize() == 1 ? 1f : 1.75f : 0f;
 
-        System.out.println("The total cost of the sandwich is $" + (sandwichPrice * discount));
+        System.out.println("The total cost of the sandwich is $" + ((sandwichPrice + extraCharge) * discount));
     }
 
     public static int getSandwichSize(){
@@ -42,6 +44,18 @@ public class SandwichShop {
             discount = 1f;
         }
         return discount;
+    }
+
+    public static boolean wantSandwichLoaded(){
+        String answer = "";
+        System.out.println("Would you like a 'loaded' sandwich for additional price?");
+        answer = scanner.nextLine();
+        while (!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no")){
+            System.out.println("yes or no ?");
+            answer = scanner.nextLine();
+        }
+        return answer == "yes" ? true : false;
+
     }
 
 }

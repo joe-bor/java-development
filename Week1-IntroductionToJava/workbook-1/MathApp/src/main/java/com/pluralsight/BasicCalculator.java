@@ -3,61 +3,90 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class BasicCalculator {
+
+    public static char symbol;
+    public static double answer;
+    public static String operator;
+    public static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        // Get inputs from user
+        float firstFloat= getNumberFromUser();
+        float secondFloat = getNumberFromUser();
 
-        System.out.println("Enter the first number: ");
-        float firstFloat = scanner.nextFloat();
-        System.out.println("Enter the second number: ");
-        float secondFloat = scanner.nextFloat();
-        scanner.nextLine();
+        // Show available commands
+        printCommandsToOperations();
 
-        System.out.println("Possible Calculations:");
-        System.out.println("(A)dd");
-        System.out.println("(S)ubtract");
-        System.out.println("(M)ultiply");
-        if (secondFloat == 0) {
-            System.out.println("** Can't divide with 0 **");
-        } else {
-            System.out.println("(D)ivide");
-        }
-        System.out.println();
-
-        System.out.print("Please select an option: ");
-        String operator = scanner.nextLine().toUpperCase();
-        char symbol;
-        double answer;
-
-        switch (operator) {
-            case "A":
-                symbol = '+';
-                answer = firstFloat + secondFloat;
-                System.out.println(firstFloat + " " + symbol + " " + secondFloat + " = " + answer );
-                break;
-            case "S":
-                symbol = '-';
-                answer = firstFloat - secondFloat;
-                System.out.println(firstFloat + " " + symbol + " " + secondFloat + " = " + answer );
-                break;
-            case "M":
-                symbol = '*';
-                answer = firstFloat * secondFloat;
-                System.out.println(firstFloat + " " + symbol + " " + secondFloat + " = " + answer );
-                break;
-            case "D":
-                // I dont know how to handle errors/exceptions yet lol
-                if (secondFloat == 0) {
-                    System.out.println("\n Cannot divide with 0");
-                    throw new Error("Cannot divide with 0");
-                }
-                symbol = '/';
-                answer = firstFloat / secondFloat;
-                System.out.println(firstFloat + " " + symbol + " " + secondFloat + " = " + answer );
-                break;
-            default:
-                System.out.println("Invalid inputs. Please try again");
-        }
+        String operator = getOperationFromUser();
+        boolean isSuccessful = doMath(firstFloat, secondFloat, operator);
+        if (isSuccessful) printAnswer(firstFloat, secondFloat);
 
         scanner.close();
+    }
+
+    public static float getNumberFromUser(){
+        System.out.println("Enter the a number: ");
+        while (!scanner.hasNextFloat()){
+            System.out.println("Invalid input");
+            scanner.next();
+        }
+        return scanner.nextFloat();
+    }
+
+    public static void printCommandsToOperations(){
+        System.out.println("""
+                Possible Calculations:
+                (A)dd
+                (S)ubtract
+                (M)ultiply
+                (D)ivide
+                ** Note: You can't divide with 0 **"
+                """);
+    }
+
+    public static String getOperationFromUser(){
+        do {
+            System.out.print("Please select an option: ");
+            operator = scanner.nextLine().toUpperCase();
+        } while (!operator.matches("[ASMD]"));
+        return operator;
+    }
+
+    public static boolean doMath(float firstFloat, float secondFloat, String operator){
+        boolean isSuccessful = true;
+        try {
+            switch (operator) {
+                case "A":
+                    symbol = '+';
+                    answer = firstFloat + secondFloat;
+                    break;
+                case "S":
+                    symbol = '-';
+                    answer = firstFloat - secondFloat;
+                    break;
+                case "M":
+                    symbol = '*';
+                    answer = firstFloat * secondFloat;
+                    break;
+                case "D":
+                    if (secondFloat == 0) {
+                        isSuccessful = false;
+                        System.out.println("\nCannot divide with 0 \nExiting the program.");
+                        break;
+                    }
+                    symbol = '/';
+                    answer = firstFloat / secondFloat;
+                    break;
+                default:
+                    System.out.println("Invalid inputs. Please try again");
+            }
+        } catch (ArithmeticException e) {
+            System.err.println("Division by 0 error, perhaps?");
+        }
+        return isSuccessful;
+    }
+
+    public static void printAnswer(float firstFloat, float secondFloat){
+        System.out.println(firstFloat + " " + symbol + " " + secondFloat + " = " + answer );
     }
 }

@@ -21,13 +21,14 @@ This repository contains my work in Pluralsight's Learn to Code Academy through 
 <section>
   <details open>
     <summary>
-      Week 1
+      Week 1 - Introduction to Java
     </summary>
       <ul>
         <li>High-level overview of computers and its components.</li>
         <li>What is Git and how to use it.</li>
         <li>IntelliJ IDEA</li>
-        <li>Java</li>
+        <li>Data Types - Operations - Scanner Object</li>
+        <li>Static Methods - Conditionals </li>
       </ul>
   </details>
   

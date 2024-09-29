@@ -7,6 +7,7 @@ public class BasicCalculator {
     public static char symbol;
     public static double answer;
     public static String operator;
+    public static int numberCounter = 1;
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -25,11 +26,17 @@ public class BasicCalculator {
     }
 
     public static float getNumberFromUser(){
-        System.out.println("Enter the a number: ");
+        switch (numberCounter){
+            case 1 -> System.out.println("Enter the first number: ");
+            case 2 -> System.out.println("Enter the second number: ");
+            default -> System.out.println("Enter a number: ");
+        }
+
         while (!scanner.hasNextFloat()){
             System.out.println("Invalid input");
             scanner.next();
         }
+        numberCounter++;
         return scanner.nextFloat();
     }
 

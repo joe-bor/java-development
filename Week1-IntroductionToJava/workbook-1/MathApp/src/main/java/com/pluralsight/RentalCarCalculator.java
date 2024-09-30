@@ -4,23 +4,20 @@ import java.util.Scanner;
 
 public class RentalCarCalculator {
 
+    static final float CAR_RENTAL_BASE_PRICE = 29.99f;
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         String pickUpDate = determinePickUpDate();
 
         int numberOfDays = determineNumOfRentalDays();
-        scanner.nextLine();
-
         boolean hasTollTag = isTollTagWanted();
         boolean hasCarGPS  = isCarGPSWanted();
         boolean hasRoadSideAssistance =  isRoadSideAssistanceWanted();
-
         int userAge = determineUserAge();
-        scanner.nextLine();
 
-        float underAgeSurcharge = userAge < 25 ? (29.99f * .3f) : 0f;
-        float carRentalPricePerDay = 29.99f + underAgeSurcharge;
+        float underAgeSurcharge = userAge < 25 ? (CAR_RENTAL_BASE_PRICE * .3f) : 0f;
+        float carRentalPricePerDay = CAR_RENTAL_BASE_PRICE + underAgeSurcharge;
         float optionsCost = calculateOptionsCost(hasTollTag, hasCarGPS, hasRoadSideAssistance);
         float totalCost = calculateTotalCost(carRentalPricePerDay, optionsCost, numberOfDays);
 
@@ -29,6 +26,8 @@ public class RentalCarCalculator {
         System.out.println("Under Age Surcharge: $" + underAgeSurcharge);
         System.out.println("------------------------------------------------");
         System.out.printf("Total Cost: $" + totalCost);
+
+        scanner.close();
     }
 
     static String determinePickUpDate(){
@@ -38,7 +37,9 @@ public class RentalCarCalculator {
 
     static int determineNumOfRentalDays(){
         System.out.println("For how many days?");
-         return scanner.nextInt();
+        int numOfDays = scanner.nextInt();
+        scanner.nextLine();
+        return numOfDays;
     }
 
     static boolean isTollTagWanted() {
@@ -70,7 +71,9 @@ public class RentalCarCalculator {
 
     static int determineUserAge(){
         System.out.println("How old are you?");
-        return scanner.nextInt();
+        int age = scanner.nextInt();
+        scanner.nextLine();
+        return age;
     }
 
     static float calculateOptionsCost(boolean hasTollTag, boolean hasCarGPS, boolean hasRoadSideAssistance){

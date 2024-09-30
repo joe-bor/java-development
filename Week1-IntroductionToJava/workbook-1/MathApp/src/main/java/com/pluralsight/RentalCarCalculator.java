@@ -12,8 +12,8 @@ public class RentalCarCalculator {
 
         int numberOfDays = determineNumOfRentalDays();
         boolean hasTollTag = isTollTagWanted();
-        boolean hasCarGPS  = isCarGPSWanted();
-        boolean hasRoadSideAssistance =  isRoadSideAssistanceWanted();
+        boolean hasCarGPS = isCarGPSWanted();
+        boolean hasRoadSideAssistance = isRoadSideAssistanceWanted();
         int userAge = determineUserAge();
 
         float underAgeSurcharge = userAge < 25 ? (CAR_RENTAL_BASE_PRICE * .3f) : 0f;
@@ -30,12 +30,12 @@ public class RentalCarCalculator {
         scanner.close();
     }
 
-    static String determinePickUpDate(){
+    static String determinePickUpDate() {
         System.out.println("When do you plan on picking up?");
         return scanner.nextLine();
     }
 
-    static int determineNumOfRentalDays(){
+    static int determineNumOfRentalDays() {
         System.out.println("For how many days?");
         int numOfDays = scanner.nextInt();
         scanner.nextLine();
@@ -51,7 +51,7 @@ public class RentalCarCalculator {
         return false;
     }
 
-    static boolean isCarGPSWanted(){
+    static boolean isCarGPSWanted() {
         System.out.println("Would you like a GPS for $2.95/day? (yes/no)");
         String carGps = scanner.nextLine();
 
@@ -60,7 +60,7 @@ public class RentalCarCalculator {
         return false;
     }
 
-    static boolean isRoadSideAssistanceWanted(){
+    static boolean isRoadSideAssistanceWanted() {
         System.out.println("Would you like roadside assistance for $3.95/day? (yes/no");
         String roadsideAssistance = scanner.nextLine();
 
@@ -69,14 +69,14 @@ public class RentalCarCalculator {
         return false;
     }
 
-    static int determineUserAge(){
+    static int determineUserAge() {
         System.out.println("How old are you?");
         int age = scanner.nextInt();
         scanner.nextLine();
         return age;
     }
 
-    static float calculateOptionsCost(boolean hasTollTag, boolean hasCarGPS, boolean hasRoadSideAssistance){
+    static float calculateOptionsCost(boolean hasTollTag, boolean hasCarGPS, boolean hasRoadSideAssistance) {
         float tollTagExtra = hasTollTag ? 3.95f : 0f;
         float carGPSExtra = hasCarGPS ? 2.95f : 0f;
         float roadSideExtra = hasRoadSideAssistance ? 3.95f : 0f;

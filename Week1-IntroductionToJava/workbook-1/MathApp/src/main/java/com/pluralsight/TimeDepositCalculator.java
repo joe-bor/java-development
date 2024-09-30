@@ -19,6 +19,8 @@ public class TimeDepositCalculator {
 
         double newBalance = deposit * Math.pow((1 + rateInDecimal/365), (365*numOfYears));
         double interestGained = newBalance - deposit;
-        System.out.printf("If you deposit $%.2f in a CD that earns %.2f interest and matures in %d years, your CD's ending balance will be $%.2f and you would have earned $%.2f in interest ", deposit, interestRate, numOfYears, newBalance, interestGained);
+        System.out.printf("If you deposit $%.2f in a CD that earns %.2f%% interest and matures in %d years, your CD's ending balance will be $%.2f and you would have earned $%.2f in interest ", deposit, interestRate, numOfYears, newBalance, interestGained);
+
+        scanner.close();
     }
 }

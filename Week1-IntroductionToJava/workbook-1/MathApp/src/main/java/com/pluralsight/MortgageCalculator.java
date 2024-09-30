@@ -24,6 +24,8 @@ public class MortgageCalculator {
         double monthlyPayment = principalAmount * monthlyInterest * (x / y);
         double totalInterest = (monthlyPayment * loanLength * 12) - principalAmount;
 
-        System.out.printf("A $%.2f loan at %.3f interest for %d years would have a $%.2f payment with a total interest of $%.2f\n",principalAmount, interestRate, loanLength, monthlyPayment, totalInterest);
+        System.out.printf("A $%.2f loan at %.3f%% interest for %d years would have a $%.2f payment with a total interest of $%.2f\n",principalAmount, interestRate, loanLength, monthlyPayment, totalInterest);
+
+        scanner.close();
     }
 }

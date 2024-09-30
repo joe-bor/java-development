@@ -12,6 +12,7 @@ public class SandwichShop {
         int customerAge = getCustomerAge();
         float discount = determineDiscount(customerAge);
         float extraCharge = isSandwichLoaded ? getSandwichSize() == 1 ? 1f : 1.75f : 0f;
+        // condition ? return this if true : return this
 
         System.out.println("The total cost of the sandwich is $" + ((sandwichPrice + extraCharge) * discount));
     }

@@ -1,10 +1,18 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
+import java.util.Scanner;
+
 public class MiniExercises {
+
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
 //        System.out.println(getLengthOfString("hello"));
 //        System.out.println(multiplyByStr("bla", 3));
-        System.out.println(sumOfLetters("abc"));
+//        System.out.println(sumOfLetters("abc"));
+
+//        determineYearOfBirth();
     }
 
     static int getLengthOfString(String str) {
@@ -31,5 +39,15 @@ public class MiniExercises {
         }
         return sum;
 
+    }
+
+    static void determineYearOfBirth(){
+        System.out.println("How old are you going to be at the end of this year?");
+        int ageThisYear = scanner.nextInt();
+
+        LocalDate currentDate = LocalDate.now();
+        int currentYear = currentDate.getYear();
+        int birthYear = currentYear - ageThisYear;
+        System.out.println("You were born on " + birthYear);
     }
 }

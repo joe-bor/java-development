@@ -9,13 +9,15 @@ public class LoopOne {
 
     public static void main(String[] args) {
 
-        do {
-            int maxOfThreeNms = getMaxOfThreeNums();
-            System.out.println(maxOfThreeNms);
-            wantToQuit();
-        } while (isRunning);
+//        do {
+//            int maxOfThreeNms = getMaxOfThreeNums();
+//            System.out.println(maxOfThreeNms);
+//            wantToQuit();
+//        } while (isRunning);
+//
+//        scanner.close();
 
-        scanner.close();
+        LoopTwo.main(new String[]{"Hello"});
     }
 
     static int getMaxOfThreeNums() {
@@ -49,6 +51,16 @@ public class LoopOne {
         String toQuit = scanner.nextLine();
         if (toQuit.trim().toUpperCase().equalsIgnoreCase("Y")){
             isRunning = false;
+        }
+    }
+}
+
+class LoopTwo {
+    public static void main(String[] args) {
+        String userInput = args[0];
+
+        for (int i = 0; i < userInput.length(); i++) {
+            System.out.println(userInput.charAt(i));
         }
     }
 }

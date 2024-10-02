@@ -14,12 +14,13 @@ public class GuessTheNumberGame {
     static int userGuess = 0;
     static boolean isGuessing = true;
     static int guessCounter = 0;
+    static int randomNumber;
     static ArrayList<Integer> guessesContainer = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         try {
             setMaxNum();
-            int randomNumber = generateRandomNumberBetweenZeroAnd();
+            randomNumber = generateRandomNumberBetweenZeroAnd();
 
             do {
                 System.out.println("What is your guess?");
@@ -80,7 +81,17 @@ public class GuessTheNumberGame {
         fileWriter.write(String.format("""
                 # of Guesses:
                 %s
+                
+                Your Guesses:
                 """, guessCounter.toString()));
+        for(int guess: guessesContainer){
+            fileWriter.append(guess + "\n");
+        }
+        fileWriter.append(String.format("""
+                
+                Correct number:
+                %s
+                """, randomNumber));
 
         fileWriter.close();
 

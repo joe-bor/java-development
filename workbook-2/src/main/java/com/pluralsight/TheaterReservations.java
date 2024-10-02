@@ -26,7 +26,7 @@ public class TheaterReservations {
     static void getDateOfEvent(){
         System.out.print("What date will you be coming (MM/dd/yyyy): ");
         String strDate = scanner.nextLine().trim();
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("M/d/yyyy");
 
         eventDate =  LocalDate.parse(strDate, dateTimeFormatter);
     }

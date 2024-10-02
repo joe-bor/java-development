@@ -12,45 +12,36 @@ public class FullNameApplication {
 
     static void getUserInput(){
         System.out.println("Please enter your name");
-        String firstName = getFirstname();
+        String firstName = getRequiredName("First name: ");
         String middleName = getMiddleName();
-        String lastName = getLastName();
+        String lastName = getRequiredName("Last name: ");
         String suffix = getSuffix();
 
         String fullName = "";
-        fullName += (firstName + " " + (middleName.isBlank() ? " ": middleName + " ") + lastName + (suffix.isEmpty() ? "" : ", " + suffix)).trim();
+        fullName += firstName + " " + middleName + lastName + suffix;
         System.out.println(fullName);
     }
 
-    static String getFirstname(){
-        System.out.print("First name: ");
-        String firstName = scanner.nextLine();
+    static String getRequiredName(String message){
+        System.out.print(message);
+        String requiredName = scanner.nextLine();
 
-        if (firstName.isEmpty()){
-            System.out.println("First name is required!");
-            getFirstname();
+        if (requiredName.isBlank()){
+            System.out.println("This is required!");
+            requiredName = getRequiredName(message);
         }
-        return firstName;
-    }
-
-    static String getLastName(){
-        System.out.print("Last name: ");
-        String lastName = scanner.nextLine();
-
-        if (lastName.isEmpty()){
-            System.out.println("Last name is required!");
-            getLastName();
-        }
-        return lastName;
+        return requiredName.trim();
     }
 
     static String getMiddleName(){
         System.out.print("Middle name: ");
-        return scanner.nextLine();
+        String middleName = scanner.nextLine().trim();
+        return middleName.isBlank() ? "" : middleName + " ";
     }
 
     static  String getSuffix(){
         System.out.print("Suffix: ");
-        return scanner.nextLine();
+        String suffix = scanner.nextLine().trim();
+        return suffix.isBlank() ? "" : ", " + suffix;
     }
 }

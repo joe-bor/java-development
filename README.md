@@ -33,7 +33,13 @@ This repository contains my work in Pluralsight's Learn to Code Academy through 
   </details>
   
   <details>
-    <summary>Week 2</summary>
+    <summary>
+       Week 2
+    </summary>
+    <ul>
+    <li>First workbook</li>
+    <li>Strings</li>
+    </ul>
   </details>
   
   <details>

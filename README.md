@@ -39,6 +39,8 @@ This repository contains my work in Pluralsight's Learn to Code Academy through 
     <ul>
     <li>First workbook</li>
     <li>Strings</li>
+    <li>Classes</li>
+    <li>Loops</li>
     </ul>
   </details>
   

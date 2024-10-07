@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="568373bd-5f50-4334-a916-70e3b0f3d91f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/AnnuityCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/ArraysExercise.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/BasicCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/CollectingWords.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/FinancialCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/LoopOne.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/MathApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/MiniExercises.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/MortgageCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/PayRollCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/RentalCarCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/SandwichShop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/ScanExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/ScoreCounter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/SportPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week1/TimeDepositCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week2/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week2/AddressBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week2/CellPhone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week2/CellPhoneService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week2/DuplicateEncoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week2/FullNameApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week2/FullNameParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week2/GuessTheNumberGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week2/HighScoreWins.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week2/LoopsExercise.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week2/TheaterReservations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week2/TimeCalculation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week2/WhoLikesIt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/week3/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../workbook-2/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../workbook-2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../workbook-2/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../workbook-2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../workbook-2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../workbook-2/pom.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2mcLzkZSfLvARDMVJ7Ey0YJgSJm" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AnnuityCalculator.executor": "Run",
+    "Application.ArraysExercise.executor": "Run",
+    "Application.Assement1.executor": "Run",
+    "Application.BasicCalculator.executor": "Run",
+    "Application.CollectingWords.executor": "Run",
+    "Application.FinancialCalculator.executor": "Run",
+    "Application.LoopOne.executor": "Run",
+    "Application.MathApp.executor": "Run",
+    "Application.MiniExercises.executor": "Run",
+    "Application.MortgageCalculator.executor": "Run",
+    "Application.PayRollCalculator.executor": "Run",
+    "Application.RentalCarCalculator.executor": "Run",
+    "Application.SandwichShop.executor": "Run",
+    "Application.ScanExample.executor": "Run",
+    "Application.ScoreCounter.executor": "Run",
+    "Application.SportPlayer.executor": "Run",
+    "Application.TimeDepositCalculator.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/joe.bor/Desktop/YearUp/PluralSight/java-development/Week1-IntroductionToJava/workbook-1/MathApp",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Assement1">
+    <configuration name="ArraysExercise" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pluralsight.ArraysExercise" />
+      <module name="HandsOnCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pluralsight.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Assement1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pluralsight.week3.Assement1" />
+      <module name="HandsOnCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pluralsight.week3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CollectingWords" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pluralsight.CollectingWords" />
+      <module name="HandsOnCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pluralsight.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FinancialCalculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pluralsight.FinancialCalculator" />
+      <module name="HandsOnCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pluralsight.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScoreCounter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pluralsight.ScoreCounter" />
+      <module name="HandsOnCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pluralsight.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="HandsOnCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="HandsOnCode" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="HandsOnCode" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="HandsOnCode" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Docutils task">
+      <module name="HandsOnCode" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Sphinx task">
+      <module name="HandsOnCode" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="HandsOnCode" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="HandsOnCode" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Assement1" />
+        <item itemvalue="Application.CollectingWords" />
+        <item itemvalue="Application.FinancialCalculator" />
+        <item itemvalue="Application.ScoreCounter" />
+        <item itemvalue="Application.ArraysExercise" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="568373bd-5f50-4334-a916-70e3b0f3d91f" name="Changes" comment="" />
+      <created>1727371185036</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727371185036</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.week2;
 
 import java.util.Scanner;
 
@@ -9,12 +9,15 @@ public class CellPhoneService {
     public static void main(String[] args) {
         CellPhone cellPhone = createPhoneViaPrompt();
         CellPhone cellPhone2 = createPhoneViaPrompt();
+        CellPhone cellPhone3 = new CellPhone(123, "serial number", "model", "carrier", "owner");
 
         display(cellPhone);
         display(cellPhone2);
+        display(cellPhone3);
 
         cellPhone.dial(cellPhone2.getPhoneNumber());
         cellPhone2.dial(cellPhone.getPhoneNumber());
+        cellPhone3.dial(cellPhone);
     }
 
     static String promptUser(String message) {

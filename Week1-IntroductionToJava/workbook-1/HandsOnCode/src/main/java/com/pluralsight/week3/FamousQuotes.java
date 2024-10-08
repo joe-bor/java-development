@@ -1,5 +1,6 @@
 package com.pluralsight.week3;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FamousQuotes {
@@ -65,19 +66,22 @@ public class FamousQuotes {
                 1 - Pick a quote
                 2 - Get a random quote
                 """);
+        try {
+            int choice = scanner.nextInt();
+            scanner.nextLine();
 
-        int choice = scanner.nextInt();
-        scanner.nextLine();
-
-        switch (choice) {
-            case 1 -> getQuoteAtIndex(promptUser());
-            case 2 -> getRandomQuote();
+            switch (choice) {
+                case 1 -> getQuoteAtIndex(promptUser());
+                case 2 -> getRandomQuote();
 //            case 3 -> quitProgram();
-            default -> {
-                System.out.println("Pick [1] or [2]");
-                provideOptions();
-            }
+                default -> {
+                    System.out.println("Pick [1] or [2]");
+                    provideOptions();
+                }
 
+            }
+        } catch (InputMismatchException e) {
+            System.err.println(e);
         }
     }
 

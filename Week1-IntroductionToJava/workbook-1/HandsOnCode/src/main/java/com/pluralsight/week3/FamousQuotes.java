@@ -22,44 +22,44 @@ public class FamousQuotes {
     public static void main(String[] args) {
 
         do {
-            try {
-                provideOptions();
-                keepGoing();
-            } catch (ArrayIndexOutOfBoundsException e) {
-                System.err.println(e);
-                System.out.println("Index out of bounds");
-            }
+            provideOptions();
+            keepGoing();
         } while (keepGoing);
 
         scanner.close();
     }
 
-    static int promptUser(){
+    static int promptUser() {
         System.out.println("Pick a number between 1 and 10");
         int num = scanner.nextInt();
         scanner.nextLine();
         return num;
     }
 
-    static void getQuoteAtIndex(int index){
-        System.out.println(famousQuotes[index - 1]);
+    static void getQuoteAtIndex(int index) {
+        try {
+            System.out.println(famousQuotes[index - 1]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println(e);
+            System.out.println("Index out of bounds");
+        }
     }
 
-    static void getRandomQuote(){
+    static void getRandomQuote() {
         int randomIndex = (int) Math.floor(Math.random() * famousQuotes.length);
         System.out.println(famousQuotes[randomIndex]);
     }
 
-    static void keepGoing(){
+    static void keepGoing() {
         System.out.println("-----\nWould you like to see another quote? (y/n)");
         String choice = scanner.nextLine().trim().toLowerCase();
 
-        if (choice.equals("n")){
+        if (choice.equals("n")) {
             quitProgram();
         }
     }
 
-    static void provideOptions(){
+    static void provideOptions() {
         System.out.println("""
                 -----
                 1 - Pick a quote
@@ -69,15 +69,19 @@ public class FamousQuotes {
         int choice = scanner.nextInt();
         scanner.nextLine();
 
-        switch (choice){
+        switch (choice) {
             case 1 -> getQuoteAtIndex(promptUser());
             case 2 -> getRandomQuote();
 //            case 3 -> quitProgram();
-            default -> System.out.println("Pick [1] or [2]");
+            default -> {
+                System.out.println("Pick [1] or [2]");
+                provideOptions();
+            }
+
         }
     }
 
-    static void quitProgram(){
+    static void quitProgram() {
         System.out.println("Quitting...");
         keepGoing = false;
     }

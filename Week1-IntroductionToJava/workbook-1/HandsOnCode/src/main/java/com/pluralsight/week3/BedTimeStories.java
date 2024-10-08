@@ -28,6 +28,7 @@ public class BedTimeStories {
             case 1 -> printReadFile(0);
             case 2 -> printReadFile(1);
             case 3 -> printReadFile(2);
+            default -> promptUser();
         }
     }
 
@@ -43,6 +44,7 @@ public class BedTimeStories {
                 System.out.println(lineCounter + ".\t" + input);
                 lineCounter++;
             }
+            scanner1.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

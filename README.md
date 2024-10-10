@@ -37,15 +37,21 @@ This repository contains my work in Pluralsight's Learn to Code Academy through 
        Week 2
     </summary>
     <ul>
-    <li>First workbook</li>
-    <li>Strings</li>
-    <li>Classes</li>
-    <li>Loops</li>
+        <li>First workbook</li>
+        <li>Strings</li>
+        <li>Classes</li>
+        <li>Loops</li>
     </ul>
   </details>
   
   <details>
     <summary>Week 3</summary>
+    <ul>
+        <li>Overloading</li>
+        <li>Reading/Writing Files</li>
+        <li>ArrayLists</li>
+        <li>Maps</li>
+    </ul>
   </details>
   
   <details>

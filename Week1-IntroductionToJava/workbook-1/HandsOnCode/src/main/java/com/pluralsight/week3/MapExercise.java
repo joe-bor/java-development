@@ -67,14 +67,12 @@ public class MapExercise {
         System.out.println(x);
         System.out.println(statesAndCapitals.get("CA"));
 
-
     }
 
     static void exercise3() {
 
         //Type of z:  Set<Map.Entry<String,String>>
         var z = statesAndCapitals.entrySet();
-
         for (Map.Entry<String, String> entry : z){
             if (entry.getKey().equals("CA")){
                 entry.setValue("San Francisco?");

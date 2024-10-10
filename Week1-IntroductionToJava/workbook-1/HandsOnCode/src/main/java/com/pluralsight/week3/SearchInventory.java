@@ -1,5 +1,7 @@
 package com.pluralsight.week3;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,9 +16,6 @@ public class SearchInventory {
     static boolean isRunning = true;
 
     public static void main(String[] args) throws IOException {
-//        for (Product product : getInventory()){
-//            System.out.println(product);
-//        }
         // https://www.bezkoder.com/java-sort-arraylist-of-objects/
         addProductsViaFileRead("inventory.csv");
 
@@ -78,6 +77,7 @@ public class SearchInventory {
         System.out.println("Creating a new product...");
         System.out.print("Provide id: ");
         int id = scanner.nextInt();
+        scanner.nextLine();
         System.out.print("Provide name: ");
         String name = scanner.nextLine();
         System.out.print("Provide price: ");
@@ -109,14 +109,19 @@ public class SearchInventory {
     private static void searchProductById() {
         System.out.println("Please provide the Id of the product you are looking for");
         int id = scanner.nextInt();
+        scanner.nextLine();
 
+        boolean found = false;
         for (Product product : inventory){
             if (id == product.getId()){
                 System.out.println("Here you go:");
                 System.out.println(product);
+                found = true;
                 break;
             }
-        System.out.println("Product not found");
+        }
+        if (!found) {
+            System.out.println("Product not found");
         }
     }
 

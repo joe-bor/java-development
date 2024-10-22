@@ -1,5 +1,9 @@
 package com.pluralsight.week5;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.temporal.ChronoField;
+
 class Employee {
     private int employeeId;
     private String name;
@@ -88,12 +92,23 @@ class Employee {
         setPunchInTime(time);
     }
 
+    public void punchIn() {
+        LocalTime currentTime =  LocalDateTime.now().toLocalTime();
+        setPunchInTime(currentTime.getHour() +  (double) currentTime.getMinute() /60);
+    }
+
     public void punchOut(double time) {
         setHoursWorked(this.getHoursWorked() + (time - getPunchInTime()));
         setPunchInTime(0); // turns out 0 in military time is also midnight
     }
 
-    public void punchTimeCard(double punchIn, double punchOut){
-         this.setHoursWorked(this.getHoursWorked() + punchOut - punchIn);
+    public void punchOut(){
+        LocalTime currentTime = LocalDateTime.now().toLocalTime();
+        double hoursWorked =  this.getPunchInTime() - (currentTime.getHour() + (double) currentTime.getMinute()/60);
+        setHoursWorked(this.getHoursWorked() + hoursWorked);
+    }
+
+    public void punchTimeCard(double punchIn, double punchOut) {
+        this.setHoursWorked(this.getHoursWorked() + punchOut - punchIn);
     }
 }

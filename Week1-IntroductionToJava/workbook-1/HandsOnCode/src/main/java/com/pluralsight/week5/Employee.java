@@ -4,10 +4,11 @@ class Employee {
     private int employeeId;
     private String name;
     private String department;
-    private float payRate;
-    private float hoursWorked;
+    private double payRate;
+    private double hoursWorked;
+    private double punchInTime;
 
-    public Employee(int employeeId, String name, String department, float payRate, float hoursWorked) {
+    public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
         this.name = name;
         this.department = department;
@@ -39,25 +40,25 @@ class Employee {
         this.department = department;
     }
 
-    public float getPayRate() {
+    public double getPayRate() {
         return payRate;
     }
 
-    public void setPayRate(float payRate) {
+    public void setPayRate(double payRate) {
         this.payRate = payRate;
     }
 
-    public float getHoursWorked() {
+    public double getHoursWorked() {
         return hoursWorked;
     }
 
-    public void setHoursWorked(float hoursWorked) {
+    public void setHoursWorked(double hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
 
-    public float getTotalPay() {
-        float overtimeHours = getOverTimeHours();
-        float totalPay = 0f;
+    public double getTotalPay() {
+        double overtimeHours = getOverTimeHours();
+        double totalPay = 0f;
 
         if (overtimeHours > 0f) {
             totalPay = (payRate * 1.5f * overtimeHours) + (payRate * getRegularHours());
@@ -67,11 +68,32 @@ class Employee {
         return totalPay;
     }
 
-    public float getRegularHours() {
+    public double getRegularHours() {
         return hoursWorked <= 40.0f ? hoursWorked : 40.0f;
     }
 
-    public float getOverTimeHours() {
+    public double getOverTimeHours() {
         return hoursWorked <= 40.0f ? 0f : (hoursWorked - 40f);
+    }
+
+    public double getPunchInTime() {
+        return punchInTime;
+    }
+
+    public void setPunchInTime(double punchInTime) {
+        this.punchInTime = punchInTime;
+    }
+
+    public void punchIn(double time) {
+        setPunchInTime(time);
+    }
+
+    public void punchOut(double time) {
+        setHoursWorked(this.getHoursWorked() + (time - getPunchInTime()));
+        setPunchInTime(0);
+    }
+
+    public void punchTimeCard(double punchIn, double punchOut){
+         this.setHoursWorked(this.getHoursWorked() + punchOut - punchIn);
     }
 }

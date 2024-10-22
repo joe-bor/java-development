@@ -23,7 +23,7 @@ class Reservation {
     }
 
     public void setRoomType(String roomType) throws RoomTypeException {
-         if (!roomType.equalsIgnoreCase("king") || !roomType.equalsIgnoreCase("double")){
+         if (!roomType.equalsIgnoreCase("king") && !roomType.equalsIgnoreCase("double")){
              throw new RoomTypeException("Room type has to be either king or double");
          }
         this.roomType = roomType;

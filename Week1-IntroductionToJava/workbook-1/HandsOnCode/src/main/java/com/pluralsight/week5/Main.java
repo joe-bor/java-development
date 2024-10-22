@@ -1,9 +1,14 @@
 package com.pluralsight.week5;
 
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+
+
 public class Main {
+    private static final Logger LOG = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
-        Employee e = new Employee(1, "Joe", "Department", 1.00, 20);
-        e.punchIn();
+        LOG.info("Hello");
+        LOG.warn("Warning");
     }
 }

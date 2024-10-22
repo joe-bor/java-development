@@ -90,7 +90,7 @@ class Employee {
 
     public void punchOut(double time) {
         setHoursWorked(this.getHoursWorked() + (time - getPunchInTime()));
-        setPunchInTime(0);
+        setPunchInTime(0); // turns out 0 in military time is also midnight
     }
 
     public void punchTimeCard(double punchIn, double punchOut){

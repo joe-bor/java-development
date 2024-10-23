@@ -89,22 +89,28 @@ class Employee {
     }
 
     public void punchIn(double time) {
+        if (time > 24.0 || time < 0) {
+            throw new IllegalArgumentException("Time must be between 0 and 24");
+        }
         setPunchInTime(time);
     }
 
     public void punchIn() {
-        LocalTime currentTime =  LocalDateTime.now().toLocalTime();
-        setPunchInTime(currentTime.getHour() +  (double) currentTime.getMinute() /60);
+        LocalTime currentTime = LocalDateTime.now().toLocalTime();
+        setPunchInTime(currentTime.getHour() + (double) currentTime.getMinute() / 60);
     }
 
     public void punchOut(double time) {
+        if (time > 24.0 || time < 0) {
+            throw new IllegalArgumentException("Time must be between 0 and 24");
+        }
         setHoursWorked(this.getHoursWorked() + (time - getPunchInTime()));
         setPunchInTime(0); // turns out 0 in military time is also midnight
     }
 
-    public void punchOut(){
+    public void punchOut() {
         LocalTime currentTime = LocalDateTime.now().toLocalTime();
-        double hoursWorked =  this.getPunchInTime() - (currentTime.getHour() + (double) currentTime.getMinute()/60);
+        double hoursWorked = this.getPunchInTime() - (currentTime.getHour() + (double) currentTime.getMinute() / 60);
         setHoursWorked(this.getHoursWorked() + hoursWorked);
     }
 

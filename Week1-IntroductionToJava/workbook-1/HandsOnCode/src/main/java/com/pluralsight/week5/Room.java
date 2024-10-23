@@ -54,6 +54,8 @@ class Room {
     }
 
     public void cleanRoom() {
-        this.setDirty(false);
+        if (!this.isOccupied()) {
+            this.setDirty(false);
+        }
     }
 }

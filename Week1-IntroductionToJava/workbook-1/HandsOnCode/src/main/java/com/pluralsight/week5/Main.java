@@ -18,19 +18,17 @@ public class Main {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     public static void main(String[] args) {
-        LOG.info("----------------");
-        String currency = "CAD";
+//        LOG.info("----------------");
+//        String currency = "CAD";
+//
+//        HttpRequest request = HttpRequest.newBuilder(URI.create(Url.formatted(currency))).build();
+//
+//        try {
+//            HttpResponse<String> response = CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
+//            System.out.println(response.body());
+//        } catch (IOException | InterruptedException e) {
+//            LOG.error("Failed fetching", e);
+//        }
 
-        HttpRequest request = HttpRequest.newBuilder(URI.create(Url.formatted(currency))).build();
-
-        try {
-            HttpResponse<String> response = CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body());
-        } catch (IOException | InterruptedException e) {
-            LOG.error("Failed fetching", e);
-        }
-
-//        var book = new Book();
-//        var x = Book.NewsPaper.hi();
     }
 }

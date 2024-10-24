@@ -6,13 +6,15 @@ public class Book {
     private double price;
     private String isbn;
 
-    static class NewsPaper{
-        public void hello(){
+    public static class NewsPaper {
+        public void hello() {
             System.out.println("Hello");
         }
 
-        public static void hi(){
+        public static void hi() {
             System.out.println("hi");
         }
-    };
+    }
+
+    ;
 }

@@ -1,5 +1,6 @@
 package com.pluralsight.week5;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
@@ -14,6 +15,7 @@ public class Main {
     private static final Logger LOG = LoggerFactory.getLogger(Main.class);
     static String Url = "https://open.er-api.com/v6/latest/%s";
     static final HttpClient CLIENT = HttpClient.newHttpClient();
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     public static void main(String[] args) {
         LOG.info("----------------");
@@ -27,5 +29,8 @@ public class Main {
         } catch (IOException | InterruptedException e) {
             LOG.error("Failed fetching", e);
         }
+
+//        var book = new Book();
+//        var x = Book.NewsPaper.hi();
     }
 }

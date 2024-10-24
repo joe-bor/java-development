@@ -5,4 +5,14 @@ public class Book {
     private String author;
     private double price;
     private String isbn;
+
+    static class NewsPaper{
+        public void hello(){
+            System.out.println("Hello");
+        }
+
+        public static void hi(){
+            System.out.println("hi");
+        }
+    };
 }

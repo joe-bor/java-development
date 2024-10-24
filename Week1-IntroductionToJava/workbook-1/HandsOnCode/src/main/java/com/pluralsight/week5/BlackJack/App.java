@@ -51,6 +51,18 @@ public class App {
             }
         }
 
+        // Display each player's hand (AGAIN, after potential extra draws)
+        for (Player player : playerList){
+            System.out.println("------------------------------");
+            System.out.println(String.format("%s's Cards", player.name));
+            for (Card card : player.hand.getCards()) {
+                card.flip();
+                System.out.printf("%s of %s\n", card.getValue(), card.getSuit());
+                card.flip();
+            }
+            System.out.println(player.hand.getValue());
+        }
+
         // Determine each player's score
         Player currentPlayerClosestTo21 = null;
         int CurrentScoreClosestTo21 = 0;
@@ -61,7 +73,7 @@ public class App {
             for (Card card : player.hand.getCards()){
                 if (!card.isFaceUp()){
                     card.flip();
-                    if (card.getValue() == "A"){
+                    if (card.getValue().equalsIgnoreCase("A")){
                         hasAce = true;
                     }
                     card.flip();
@@ -78,6 +90,7 @@ public class App {
             // bust
             if (playerHandScore > 21 && !hasAce) {
                 playerList.remove(player);
+                continue;
             }
 
                 // this only runs on the first iteration

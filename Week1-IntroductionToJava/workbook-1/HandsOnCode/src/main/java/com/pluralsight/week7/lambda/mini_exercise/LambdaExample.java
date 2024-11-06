@@ -28,6 +28,7 @@ public class LambdaExample {
         String result3 = stringFormatter.format("i was written in lowercase");
         System.out.println("result3 = " + result3);
 
+        // Unary
 
     }
 }

@@ -36,7 +36,6 @@ public class LambdaDemo {
         // Using built-in functional interfaces
         List<Integer> integerList =  List.of(1,2,3,4,5);
         integerList.forEach(integer -> System.out.println(integer));
-//        integerList.forEach(integer -> System.out::println);
         integerList.forEach(System.out::println);
 
     }

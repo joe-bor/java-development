@@ -27,7 +27,7 @@ CREATE TABLE `Inventory` (
 );
 
 CREATE TABLE `Sales Contracts` (
-    `Date` TIMESTAMP,
+    `Date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `ContractID` INTEGER NOT NULL AUTO_INCREMENT,
     `VehicleVIN` VARCHAR(5) NOT NULL,
     FOREIGN KEY (VehicleVIN) REFERENCES Vehicles (VehicleVIN),
@@ -35,7 +35,7 @@ CREATE TABLE `Sales Contracts` (
 );
 
 CREATE TABLE `Lease Contracts` (
-    `Date` TIMESTAMP,
+    `Date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `ContractID` INTEGER NOT NULL AUTO_INCREMENT,
     `VehicleVIN` VARCHAR(5) NOT NULL,
     FOREIGN KEY (VehicleVIN) REFERENCES Vehicles (VehicleVIN),

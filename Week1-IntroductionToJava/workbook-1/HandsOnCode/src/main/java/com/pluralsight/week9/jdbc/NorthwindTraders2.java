@@ -62,6 +62,7 @@ public class NorthwindTraders2 {
                 What do you want to do?
                 1 - Display al products
                 2 - Display all customers
+                3 - Display all categories
                 0 - Exit
                 
                 Select an option:
@@ -71,6 +72,7 @@ public class NorthwindTraders2 {
         switch (answer) {
             case "1" -> displayAllProducts();
             case "2" -> displayAllCustomers();
+            case "3" -> displayAllCategories();
             case "0" -> closeApp();
             default -> System.out.println("Invalid Option");
         }
@@ -129,6 +131,68 @@ public class NorthwindTraders2 {
                         """, resultSet.getString("ContactName"), resultSet.getString("CompanyName"), resultSet.getString("City"), resultSet.getString("Country"), resultSet.getString("Phone"));
             }
 
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void displayAllCategories() {
+        String query = """
+                SELECT *
+                FROM Categories
+                ORDER BY CategoryID
+                """;
+
+        try (PreparedStatement preparedStatement = CONNECTION.prepareStatement(query);
+             ResultSet resultSet = preparedStatement.executeQuery()) {
+
+            while (resultSet.next()) {
+                System.out.printf("""
+                        --------------------------------------------------
+                        Category Id: %d
+                        Category Name: %-10s
+                        --------------------------------------------------
+                        
+                        """, resultSet.getInt("CategoryID"), resultSet.getString("CategoryName"));
+            }
+
+            // new prompt
+            System.out.println("Pick a category ID to see all its products");
+            String categoryId = SCANNER.nextLine();
+            displayAllProductsFromCategory(categoryId);
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void displayAllProductsFromCategory(String categoryID){
+        String query = """
+                SELECT p.ProductID, p.ProductName, p.UnitPrice, p.UnitsInStock
+                FROM Categories c
+                JOIN Products p
+                ON c.CategoryID = p.CategoryID
+                WHERE c.CategoryID = ?
+                """;
+
+        try (PreparedStatement preparedStatement = CONNECTION.prepareStatement(query)) {
+            preparedStatement.setString(1, categoryID);
+
+            try(ResultSet resultSet =  preparedStatement.executeQuery()){
+                while (resultSet.next()){
+                    System.out.printf("""
+                        --------------------------------------------------
+                        Product ID: %-10s
+                        Product Name: %-10s
+                        Unit Price: %.2f
+                        Units in Stock: %.2f
+                        --------------------------------------------------
+                        
+                        """, resultSet.getString("ProductID"), resultSet.getString("ProductName"), resultSet.getFloat("UnitPrice"), resultSet.getFloat("UnitsInStock"));
+
+                }
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

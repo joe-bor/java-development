@@ -17,42 +17,61 @@ public class NorthwindTraders2 {
         String dbUser = properties.getProperty("db.user");
         String dbPassword = properties.getProperty("db.password");
 
+        String query = """
+                SELECT ProductId, ProductName, UnitPrice, UnitsInStock
+                FROM products;
+                """;
+
+        String queryById = """
+                SELECT ProductId, ProductName, UnitPrice, UnitsInStock
+                FROM products
+                WHERE ProductId = ?;
+                """;
+
         // open a connection
-        try (Connection connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword)) {
+        try (Connection connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+             PreparedStatement preparedStatement = connection.prepareStatement(query);
+             ResultSet resultSet = preparedStatement.executeQuery()) {
             // execute query
 
-            String query = """
-                    SELECT ProductId, ProductName
-                    FROM products;
-                    """;
-
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
                 System.out.printf("""
-                        Product Id: %d --- Product Name: %s
-                        """, resultSet.getInt(1), resultSet.getString(2));
+                        --------------------------------------------------
+                        Product Id: %d
+                        Name: %-10s
+                        Price: %d
+                        Stock: %d
+                        --------------------------------------------------
+                        
+                        """, resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getInt(4));
             }
 
             // ---- choose id
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Choose an id: ");
-            int id = scanner.nextInt();
-            scanner.nextLine();
+            try (
+                    Scanner scanner = new Scanner(System.in);
+                    PreparedStatement preparedStatement1 = connection.prepareStatement(queryById)
+            ) {
+                System.out.print("Choose an id: ");
+                int id = scanner.nextInt();
+                scanner.nextLine();
 
-            PreparedStatement preparedStatement1 = connection.prepareStatement("SELECT * FROM products WHERE ProductId = ?");
-            preparedStatement1.setInt(1, id);
-            ResultSet resultSet1 = preparedStatement1.executeQuery();
+                preparedStatement1.setInt(1, id);
+                ResultSet resultSet1 = preparedStatement1.executeQuery();
 
-            while (resultSet1.next()) {
-                System.out.printf("""
-                        You chose:
-                        Product Id: %d --- Product Name: %s
-                        
-                        """, resultSet1.getInt(1), resultSet1.getString(2));
+                while (resultSet1.next()) {
+                    System.out.printf("""
+                            Product Id: %d
+                            Name: %-10s
+                            Price: %d
+                            Stock: %d
+                            --------------------------------------------------
+                            
+                            """, resultSet1.getInt(1), resultSet1.getString(2), resultSet1.getInt(3), resultSet1.getInt(4));
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -1,12 +1,11 @@
 package com.pluralsight.week9.jdbc;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.commons.dbcp2.BasicDataSource;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.io.Serial;
 import java.sql.*;
 import java.util.Properties;
 import java.util.Scanner;
@@ -26,12 +25,7 @@ public class NorthwindTraders2 {
             displayHomeScreen();
         } while (isAppRunning());
 
-
-        String queryById = """
-                SELECT ProductId, ProductName, UnitPrice, UnitsInStock
-                FROM products
-                WHERE ProductId = ?;
-                """;
+        closeResources();
     }
 
     private static Connection initConnection() {
@@ -41,8 +35,13 @@ public class NorthwindTraders2 {
         String dbUser = PROPERTIES.getProperty("db.user");
         String dbPassword = PROPERTIES.getProperty("db.password");
 
+        BasicDataSource basicDataSource = new BasicDataSource();
+        basicDataSource.setUrl(dbUrl);
+        basicDataSource.setUsername(dbUser);
+        basicDataSource.setPassword(dbPassword);
+
         try {
-            return DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+            return basicDataSource.getConnection();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -167,7 +166,7 @@ public class NorthwindTraders2 {
         }
     }
 
-    private static void displayAllProductsFromCategory(String categoryID){
+    private static void displayAllProductsFromCategory(String categoryID) {
         String query = """
                 SELECT p.ProductID, p.ProductName, p.UnitPrice, p.UnitsInStock
                 FROM Categories c
@@ -179,20 +178,29 @@ public class NorthwindTraders2 {
         try (PreparedStatement preparedStatement = CONNECTION.prepareStatement(query)) {
             preparedStatement.setString(1, categoryID);
 
-            try(ResultSet resultSet =  preparedStatement.executeQuery()){
-                while (resultSet.next()){
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
                     System.out.printf("""
-                        --------------------------------------------------
-                        Product ID: %-10s
-                        Product Name: %-10s
-                        Unit Price: %.2f
-                        Units in Stock: %.2f
-                        --------------------------------------------------
-                        
-                        """, resultSet.getString("ProductID"), resultSet.getString("ProductName"), resultSet.getFloat("UnitPrice"), resultSet.getFloat("UnitsInStock"));
+                            --------------------------------------------------
+                            Product ID: %-10s
+                            Product Name: %-10s
+                            Unit Price: %.2f
+                            Units in Stock: %.2f
+                            --------------------------------------------------
+                            
+                            """, resultSet.getString("ProductID"), resultSet.getString("ProductName"), resultSet.getFloat("UnitPrice"), resultSet.getFloat("UnitsInStock"));
 
                 }
             }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    private static void closeResources(){
+        try {
+            SCANNER.close();
+            CONNECTION.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -50,8 +50,10 @@ public class SakilaDataManager {
                 AND last_name LIKE '%%%s%%'
                 """.formatted(firstName, lastName);
 
-
-        try (Connection connection = basicDataSource.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(query); ResultSet resultSet = preparedStatement.executeQuery()) {
+        try (Connection connection = basicDataSource.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query);
+             ResultSet resultSet = preparedStatement.executeQuery()
+        ) {
 
             while (resultSet.next()) {
                 actorList.add(new Actor(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3)));

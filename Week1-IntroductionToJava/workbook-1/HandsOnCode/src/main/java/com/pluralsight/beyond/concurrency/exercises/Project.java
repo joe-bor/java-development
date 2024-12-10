@@ -1,35 +1,39 @@
 package com.pluralsight.beyond.concurrency.exercises;
 
+import java.util.List;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Project {
 
-    public static void main(String[] args) {
+    public static void main(String... args) {
         ParkStatus parkStatus = new ParkStatus(100);
 
-        Thread feedingThread = new Thread(new
-                FeedingDinosaurs(parkStatus));
+        try (ExecutorService executorService = Executors.newFixedThreadPool(2)) {
 
-        Thread trackingThread = new Thread(new
-                TrackingMovements(parkStatus));
+            executorService.submit(new FeedingDinosaurs(parkStatus));
+            executorService.submit(new TrackingMovements(parkStatus));
 
-        feedingThread.start();
-        trackingThread.start();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 
     static class ParkStatus {
-        private int foodStock;
+        private AtomicInteger foodStock;
 
         public ParkStatus(int foodStock) {
-            this.foodStock = foodStock;
+            this.foodStock = new AtomicInteger(foodStock);
         }
 
         public int getFoodStock() {
-            return this.foodStock;
+            return this.foodStock.get();
         }
 
-        public void reduceFood(int amount) {
-            this.foodStock -= amount;
+        public synchronized void reduceFood(int amount) {
+            this.foodStock.getAndAdd(-amount);
         }
     }
 
@@ -42,7 +46,7 @@ public class Project {
 
         @Override
         public void run() {
-            while (true) {
+            while (parkStatus.getFoodStock() != 0) {
                 parkStatus.reduceFood(1);
                 System.out.println("Food stock after feeding: "
                         + parkStatus.getFoodStock());
@@ -59,7 +63,7 @@ public class Project {
 
         @Override
         public void run() {
-            while (true) {
+            while (parkStatus.getFoodStock() != 0) {
                 System.out.println("Current food stock: " +
                         parkStatus.getFoodStock());
             }
@@ -68,3 +72,12 @@ public class Project {
     }
 
 }
+
+/*
+ * Solving race condition:
+ *   - perhaps change foodStock from int to AtomicInteger
+ *       - and its corresponding getters and setters to leverage the methods of AtomicInteger
+ *
+ *
+ *
+ * */

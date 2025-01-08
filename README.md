@@ -140,5 +140,14 @@ This repository contains my work in Pluralsight's Learn to Code Academy through 
     </ul>
   </details>
 
+  <details>
+    <summary>Beyond</summary>
+    <ul>
+        <li>Enums</li>
+        <li>Async Programming</li>
+        <li>Concurrency</li>
+    </ul>
+  </details>
+
   
 </section>

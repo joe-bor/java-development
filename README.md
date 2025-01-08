@@ -56,37 +56,88 @@ This repository contains my work in Pluralsight's Learn to Code Academy through 
   
   <details>
     <summary>Week 4</summary>
+    <ul>
+        <li>Capstone 1: <a href="https://github.com/joe-bor/AccountingLedger">Accounting Ledger</a></li>
+    </ul>
   </details>
   
   <details>
     <summary>Week 5</summary>
+     <ul>
+        <li>Intro to OOP</li>
+        <li>Classes</li>
+        <li>Unit Testing with JUnit</li>
+        <li>Static keyword</li>
+        <li>Class Relationships (ie. 'has-a' relationship)</li>
+    </ul>
   </details>
   
   <details>
     <summary>Week 6</summary>
+    <ul>
+        <li>Inheritance</li>
+        <li>Java Inheritance</li>
+        <li>Polymorphism</li>
+        <li>Abstraction</li>
+    </ul>
   </details>
+
   <details>
     <summary>Week 7</summary>
+    <ul>
+        <li>Interfaces</li>
+        <li>Generics</li>
+        <li>Streams</li>
+        <li>Java Packages</li>
+        <li>Git Branching</li>
+    </ul>
   </details>
   
   <details>
     <summary>Week 8</summary>
+    <ul>
+        <li>Capstone 2: <a href="https://github.com/joe-bor/Deli-cious">Deli-cious</a></li>
+    </ul>
   </details>
   
   <details>
     <summary>Week 9</summary>
+    <ul>
+        <li>Relational Databases</li>
+        <li>SQL Language and Querying Data</li>
+        <li>Aggregate Functions + Grouping Results</li>
+        <li>Joins</li>
+        <li>Modifying the Data and the Database</li>
+    </ul>
   </details>
   
   <details>
     <summary>Week 10</summary>
+    <ul>
+        <li>Java database connectivity (JDBC)</li>
+        <li>DataSources</li>
+        <li>CRUD Operations</li>
+        <li>Creating Tables</li>
+        <li>Stored Procedures</li>
+    </ul>
   </details>
   
   <details>
     <summary>Week 11</summary>
+    <ul>
+        <li>Spring Framework</li>
+        <li>Spring Boot</li>
+        <li>Network Communication</li>
+        <li>Web Server / RESTful API</li>
+        <li>HTTP Request Methods</li>
+    </ul>
   </details>
   
   <details>
     <summary>Week 12</summary>
+    <ul>
+        <li>Capstone 3: <a href="https://github.com/joe-bor/easyShop">easyShop</a></li>
+    </ul>
   </details>
 
   
